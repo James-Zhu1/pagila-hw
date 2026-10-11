@@ -4,3 +4,4 @@
  * Use tables payment, rental, inventory, and film. 
  */
 
+select title, sum(amount) as profit from film join inventory using (film_id) join rental using (inventory_id) join payment using (rental_id) group by film_id order by -sum(amount),title;
