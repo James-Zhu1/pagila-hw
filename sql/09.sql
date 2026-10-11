@@ -3,4 +3,4 @@
  * Use tables staff and payment.
  */
 
-select first_name, last_name, sum(amount) as sum from staff join payment using (staff_id) where payment_date >= '2020-01-01' and payment_date < '2020-02-02' GROUP BY staff_id;
+select first_name, last_name, sum(amount) as sum from staff join payment using (staff_id) where payment_date >= '2020-01-01' and payment_date < '2020-02-02' group by staff_id order by first_name;
